@@ -1,0 +1,10 @@
+version: 1.0
+Resources:
+  - TargetService:
+      Type: AWS::ECS::Service
+      Properties:
+        TaskDefinition: "arn:aws:ecs:ap-south-1:860061945305:task-definition/PMP-TD-ALL:2"
+        LoadBalancerInfo:
+          ContainerName: "discovery-client"
+          ContainerPort: "8761"
+        PlatformVersion: "LATEST"

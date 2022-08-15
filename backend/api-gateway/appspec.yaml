@@ -1,0 +1,10 @@
+version: 1.0
+Resources:
+  - TargetService:
+      Type: AWS::ECS::Service
+      Properties:
+        TaskDefinition: "arn:aws:ecs:ap-south-1:860061945305:task-definition/PMP-TD-ALL:2"
+        LoadBalancerInfo:
+          ContainerName: "api-gateway"
+          ContainerPort: "8765"
+        PlatformVersion: "LATEST"

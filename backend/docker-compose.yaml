@@ -1,0 +1,61 @@
+version: '3.7'
+
+services:
+  authorization-microservice:
+    image: codeurtech/authorization-microservice:0.0.1-SNAPSHOT
+    mem_limit: 1000m
+    ports:
+      - "8200:8200"
+    networks:
+      - pmp-network
+    depends_on:
+      - discovery-client
+    environment:
+      EUREKA.CLIENT.SERVICEURL.DEFAULTZONE: http://discovery-client:8761/eureka
+
+  pension-detail-microservice:
+    image:  codeurtech/pensioner-detail-microservice:0.0.1-SNAPSHOT
+    mem_limit: 1000m
+    ports:
+      - "8100:8100"
+    networks:
+      - pmp-network
+    depends_on:
+      - discovery-client
+    environment:
+      EUREKA.CLIENT.SERVICEURL.DEFAULTZONE: http://discovery-client:8761/eureka
+
+  process-pension-microservice:
+    image:  codeurtech/process-pension-microservice:0.0.1-SNAPSHOT
+    mem_limit: 1000m
+    ports:
+      - "8000:8000"
+    networks:
+      - pmp-network
+    depends_on:
+      - discovery-client
+    environment:
+      EUREKA.CLIENT.SERVICEURL.DEFAULTZONE: http://discovery-client:8761/eureka
+
+  api-gateway:
+    image: codeurtech/api-gateway:0.0.1-SNAPSHOT
+    mem_limit: 1000m
+    ports:
+      - "8765:8765"
+    networks:
+      - pmp-network
+    depends_on:
+      - discovery-client
+    environment:
+      EUREKA.CLIENT.SERVICEURL.DEFAULTZONE: http://discovery-client:8761/eureka
+
+  discovery-client:
+    image: codeurtech/discovery-client:0.0.1-SNAPSHOT
+    mem_limit: 1000m
+    ports:
+      - "8761:8761"
+    networks:
+      - pmp-network
+  
+networks:
+  pmp-network:
