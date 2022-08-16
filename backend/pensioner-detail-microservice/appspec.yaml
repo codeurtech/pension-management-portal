@@ -4,7 +4,4 @@ Resources:
       Type: AWS::ECS::Service
       Properties:
         TaskDefinition: "arn:aws:ecs:ap-south-1:860061945305:task-definition/PMP-TD-ALL:2"
-        LoadBalancerInfo:
-          ContainerName: "pensioner-detail-service"
-          ContainerPort: "8100"
         PlatformVersion: "LATEST"
