@@ -6,12 +6,12 @@ The project uses Java, Springboot, JPA, hibernate among a few other dependencies
 <h3>Pension Management Portal - Components</h3>
 
 <p>Project will have three components - PMP - backend, PMP - frontend, PMP - DevOps. Let's have a closer look into all these, one-by-one.
-<li>
-<ul><b>PMP - backend</b> - This is where we handle all the logic for processing of data via microservices. Three microservices that are used:
-  <li>
-    <ul><b>Authorization Microservice</b>- Microservice is responsible for authentication and authorization of requests made to the endpoints exposed by other microservices. A Authorizatyion header along with JWT Token is added to all the requests forwarded to peer microservices and any response is returned only after validation of the request via the token shared.
-    </ul>
-  </li>
+<ul>
+<li><b>PMP - backend</b> - This is where we handle all the logic for processing of data via microservices. Three microservices that are used:
+  <ul>
+    <li><b>Authorization Microservice</b>- Microservice is responsible for authentication and authorization of requests made to the endpoints exposed by other microservices. A Authorizatyion header along with JWT Token is added to all the requests forwarded to peer microservices and any response is returned only after validation of the request via the token shared.
+    </li>
   </ul>
   </li>
+  </ul>
   </p>
