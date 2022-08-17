@@ -11,6 +11,7 @@ The project uses Java, Springboot, JPA, hibernate among a few other dependencies
   <ul>
     <li><b>Authorization Microservice</b>- Microservice is responsible for authentication and authorization of requests made to the endpoints exposed by other microservices. A Authorizatyion header along with JWT Token is added to all the requests forwarded to peer microservices and any response is returned only after validation of the request via the token shared.
     </li>
+    <li><b>Pensioner Detail Microservice</b>- Microservice takes Aadhaar number of the employee as a path variable while calling the endpoint exposed with GET, and fetches the details from a csv file having details of employees. Any invalid aadhaar number passed as path variable retruns Error 404 - Not Found. This microservice also connects with the authorization microservice's via feign to pass the Authorization header with token as request header during the call and let's the microservice return employee details in response only if the JWTtoken is valid.
   </ul>
   </li>
   </ul>
