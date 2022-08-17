@@ -23,10 +23,9 @@ phases:
     - echo Build completed on `date`
     - echo $(docker images)
     - echo Pushing docker image
-    - docker push $IMAGE_URI:${CODEBUILD_RESOLVED_SOURCE_VERSION}-v${CODEBUILD_BUILD_NUMBER}
+    - docker push $IMAGE_URI:$CODEBUILD_RESOLVED_SOURCE_VERSION-v$CODEBUILD_BUILD_NUMBER
     - echo push completed
     - printf '[{"name":"%s","imageUri":"%s"}]' $CONTAINER_NAME $IMAGE_URI > $CODEBUILD_SRC_DIR/imagedefinitions.json
-    - cd ..
 artifacts:
   files:
   - imagedefinitions.json
