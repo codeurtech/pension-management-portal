@@ -14,7 +14,7 @@ phases:
     commands:
     - echo Build started on `date`
     - cd backend/discovery-client/
-    - echo $IMAGE_URI:$CODEBUILD_RESOLVED_SOURCE_VERSION-v$CODEBUILD_BUILD_NUMBER
+    - echo $IMAGE_URI
     - mvn clean package -Ddockerfile.skip
     - docker build --tag $IMAGE_URI .
   post_build:
