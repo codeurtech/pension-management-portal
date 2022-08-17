@@ -4,4 +4,7 @@ Resources:
       Type: AWS::ECS::Service
       Properties:
         TaskDefinition: "arn:aws:ecs:ap-south-1:860061945305:task-definition/PMP-TD-ALL:2"
+        LoadBalancerInfo:
+          ContainerName: "authorization-service"
+          ContainerPort: "8200"
         PlatformVersion: "LATEST"
