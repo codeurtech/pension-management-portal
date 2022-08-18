@@ -12,7 +12,7 @@ export class AuthenticationService {
 
   
 
-  BASE_PATH = 'http://pmp-api-lb-598347378.ap-south-1.elb.amazonaws.com';
+  BASE_PATH = 'http://pmp-all-services-lb-509306844.ap-south-1.elb.amazonaws.com';
   USER_NAME_SESSION_ATTRIBUTE_NAME = 'ADMIN';
 
   username: string='';

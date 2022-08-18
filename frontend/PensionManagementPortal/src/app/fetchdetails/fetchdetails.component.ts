@@ -46,8 +46,8 @@ export class FetchdetailsComponent implements OnInit {
   failProcessPension=false;
 
   // pensionerDetails:PensionerDetails=[];
-  baseURLPost: string = 'http://pmp-api-lb-598347378.ap-south-1.elb.amazonaws.com/ProcessPension';
-  baseURLGet: string = 'http://pmp-api-lb-598347378.ap-south-1.elb.amazonaws.com/pensionerDetailByAadhaar';
+  baseURLPost: string = 'http://pmp-all-services-lb-509306844.ap-south-1.elb.amazonaws.com/ProcessPension';
+  baseURLGet: string = 'http://pmp-all-services-lb-509306844.ap-south-1.elb.amazonaws.com/pensionerDetailByAadhaar';
   
   constructor(private router: Router,
     private http:HttpClient,) {}
