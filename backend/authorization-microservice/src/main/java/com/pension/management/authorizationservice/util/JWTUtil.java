@@ -21,7 +21,7 @@ public class JWTUtil {
 	@Value("${jwt.signing.key.secret}")
 	private String secret;
 
-	public static final long JWT_TOKEN_VALIDITY = 60L *30L;
+	public static final long JWT_TOKEN_VALIDITY = 60L * 30L;
 
 	public String generateToken(String subject) {
 		return Jwts.builder().setIssuedAt(new Date(System.currentTimeMillis())).setSubject(subject)

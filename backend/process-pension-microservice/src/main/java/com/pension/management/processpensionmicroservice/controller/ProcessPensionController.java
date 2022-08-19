@@ -25,7 +25,6 @@ import lombok.extern.slf4j.Slf4j;
 
 @RestController
 @Slf4j
-//@CrossOrigin("*")
 public class ProcessPensionController {
 	
 	private static Logger log = LoggerFactory.getLogger(ProcessPensionController.class);

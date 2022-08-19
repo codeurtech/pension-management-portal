@@ -46,8 +46,8 @@ export class FetchdetailsComponent implements OnInit {
   failProcessPension=false;
 
   // pensionerDetails:PensionerDetails=[];
-  baseURLPost: string = 'http://pmp-all-services-lb-509306844.ap-south-1.elb.amazonaws.com/ProcessPension';
-  baseURLGet: string = 'http://pmp-all-services-lb-509306844.ap-south-1.elb.amazonaws.com/pensionerDetailByAadhaar';
+  baseURLPost: string = 'http://localhost:8765/ProcessPension';
+  baseURLGet: string = 'http://localhost:8765/pensionerDetailByAadhaar';
   
   constructor(private router: Router,
     private http:HttpClient,) {}
@@ -150,7 +150,7 @@ export class FetchdetailsComponent implements OnInit {
           this.showProcess=true
         }, (error) => {                              //Error callback
           console.error('error caught in component')
-          if(error.status===500){
+          if(error.status===400){
             this.errorMessage="Your Auth Token has expired, Please login again..."
             this.reLogin=true;
             this.failProcessPension=false;
